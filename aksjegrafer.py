@@ -38,7 +38,7 @@ root.protocol("WM_DELETE_WINDOW", on_close)
 overskrift_div = tk.Frame(root)
 overskrift_div.pack()
 
-overskrift = tk.Label(overskrift_div, text="Finn grafen til din askje!")
+overskrift = tk.Label(overskrift_div, text="Finn grafen til din askje!", font=("Arial", 18))
 overskrift.pack()
 
 input_div = tk.Frame(root)
