@@ -120,8 +120,6 @@ def on_close():
     root.destroy()
 
 root = tk.Tk()
-root.tk.call('source', 'azure.tcl')
-root.tk.call("set_theme", "dark")
 # Slet med at programmet ikke ville lukke seg, så fant denne løsningen på nett
 root.protocol("WM_DELETE_WINDOW", on_close)
 
