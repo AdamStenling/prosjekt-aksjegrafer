@@ -46,7 +46,7 @@ input_div.pack()
 
 aksje_input = tk.Entry(input_div)
 aksje_input.insert(0, "Skriv inn ticker")
-finn_aksje_knapp = tk.Button(input_div, text="Finn aksje", command=plot_graf)
+finn_aksje_knapp = tk.Button(input_div, text="Finn aksje", command=plot_graf, fg="blue")
 
 aksje_input.grid(row=1, column=1, padx=2)
 finn_aksje_knapp.grid(row=1, column=4)
