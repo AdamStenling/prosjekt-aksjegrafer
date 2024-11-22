@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import pandas as pd
@@ -133,6 +134,9 @@ finn_aksje_knapp = tk.Button(input_div, text="Finn aksje", command=plot_graf, bg
 
 aksje_input.grid(row=1, column=1, padx=2, pady=2)
 finn_aksje_knapp.grid(row=1, column=4)
+
+børs_boks = ttk.Combobox(root, values=list(børser.keys()))
+børs_boks.pack()
 
 graf_div = tk.Frame(root)
 graf_div.pack()
