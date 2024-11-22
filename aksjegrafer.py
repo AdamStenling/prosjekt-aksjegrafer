@@ -5,6 +5,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import pandas as pd
 import yfinance as yf
 
+
 børser = {
     "Aquis Exchange AQSE": ".AQ",
     "Athens Stock Exchange (ATHEX)": ".AT",
@@ -119,7 +120,8 @@ def on_close():
     root.destroy()
 
 root = tk.Tk()
-
+root.tk.call('source', 'azure.tcl')
+root.tk.call("set_theme", "dark")
 # Slet med at programmet ikke ville lukke seg, så fant denne løsningen på nett
 root.protocol("WM_DELETE_WINDOW", on_close)
 
