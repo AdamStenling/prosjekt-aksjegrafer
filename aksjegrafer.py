@@ -98,9 +98,7 @@ def plot_graf():
         ticker = aksje_input.get()
         børs = børs_boks.get()
         børs_ticker = børser[børs]
-        print(børs_ticker)
         ticker = f"{ticker}{børs_ticker}"
-        print(ticker)
         aksje = yf.Ticker(ticker)
         aksjenavn = aksje.info['longName']
         aksje_data = yf.download(ticker, start="2020-01-01", end="2025-01-01")
