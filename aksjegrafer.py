@@ -5,7 +5,6 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import pandas as pd
 import yfinance as yf
 
-
 børser = {
     "Aquis Exchange AQSE": ".AQ",
     "Athens Stock Exchange (ATHEX)": ".AT",
@@ -140,6 +139,7 @@ aksje_input.grid(row=1, column=1, padx=2, pady=2)
 finn_aksje_knapp.grid(row=1, column=4)
 
 børs_boks = ttk.Combobox(root, values=list(børser.keys()))
+børs_boks.set("Oslo Stock Exchange")
 børs_boks.pack()
 
 graf_div = tk.Frame(root)
