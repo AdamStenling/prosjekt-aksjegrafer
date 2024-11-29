@@ -113,6 +113,9 @@ def plot_graf():
         aksje_input.insert(0, "Finner ikke ticker")
         aksje_input.configure(fg= "Red")
 
+def fokuser(event):
+    aksje_input.delete(0, tk.END)
+
 # For å tvangslukke programmet 
 def on_close():
     root.quit()
@@ -134,6 +137,7 @@ input_div.pack()
 aksje_input = tk.Entry(input_div)
 aksje_input.insert(0, "Skriv inn ticker")
 finn_aksje_knapp = tk.Button(input_div, text="Finn aksje", command=plot_graf, bg="#005B96", fg="#fff")
+aksje_input.bind("<FocusIn>", fokuser)
 
 aksje_input.grid(row=1, column=1, padx=2, pady=2)
 finn_aksje_knapp.grid(row=1, column=4)
