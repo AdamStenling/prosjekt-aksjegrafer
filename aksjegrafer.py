@@ -111,7 +111,7 @@ def plot_graf():
     except KeyError:
         aksje_input.delete(0, tk.END)
         aksje_input.insert(0, "Finner ikke ticker")
-        aksje_input.config({"fg": "Red"})
+        aksje_input.configure(fg= "Red")
 
 # For å tvangslukke programmet 
 def on_close():
