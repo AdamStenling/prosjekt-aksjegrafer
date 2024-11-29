@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import pandas as pd
 import yfinance as yf
+from datetime import date
 
 børser = {
     "Aquis Exchange AQSE": ".AQ",
@@ -90,6 +91,7 @@ børser = {
     "Warsaw Stock Exchange": ".WA"
 }
 
+idag = date.today()
 fig = plt.figure()
 
 def plot_graf():
@@ -101,7 +103,7 @@ def plot_graf():
         ticker = f"{ticker}{børs_ticker}"
         aksje = yf.Ticker(ticker)
         aksjenavn = aksje.info['longName']
-        aksje_data = yf.download(ticker, start="2020-01-01", end="2025-01-01")
+        aksje_data = yf.download(ticker, start="2020-01-01", end=f"{idag}")
         plt.plot(aksje_data["Close"])
         plt.xlabel("Dato")
         plt.ylabel(f"Aksjepris i {aksje.info["currency"]}")
@@ -111,7 +113,7 @@ def plot_graf():
     except KeyError:
         aksje_input.delete(0, tk.END)
         aksje_input.insert(0, "Finner ikke ticker")
-        aksje_input.configure(fg= "Red")
+        aksje_input.configure(fg = "Red")
 
 def fokuser(event):
     aksje_input.delete(0, tk.END)
